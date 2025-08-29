@@ -5,8 +5,8 @@ keywords: null
 author: John Doe
 language: en
 timezone: ''
-url: https://github.com/fuqikilroy/HEXO.git
-root: /HEXO.git/
+url: https://github.com/fuqikilroy
+root: /HEXO/
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
@@ -59,7 +59,7 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: butterfly
+theme: icarus
 deploy:
   type: git
   repo: https://github.com/fuqikilroy/HEXO.git
