@@ -21,9 +21,9 @@ menu:
   公告栏: /contact/ || fas fa-clipboard-list
 
   关于||fa fa-list || hide:
-      抚七: /aboutme/ || fas fa-heartbeat
-      日志: /shuoshuo/ || fas fa-comment
-      友链: /link/ || fas fa-link
+    抚七: /aboutme/ || fas fa-heartbeat
+    日志: /shuoshuo/ || fas fa-comment
+    友链: /link/ || fas fa-link
 
 # 清单||fa fa-heartbeat || hide:
 #  音乐: /music/ || fas fa-music
@@ -673,7 +673,7 @@ comments:
   # 如果不需要评论功能，保持为空
   # 选择：Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # 两个评论系统的格式：Disqus,Waline
-  use: Giscus
+  use: # Giscus
   # 按钮旁边显示评论系统名称
   text: true
   # 懒加载：评论系统将在评论元素进入浏览器视口时加载
@@ -837,7 +837,7 @@ artalk:
 
 chat:
   # 聊天服务类型，可选值：chatra/tidio/crisp，如果不需要聊天功能则留空
-  use: tidio
+  use: # tidio
   # 推荐使用聊天按钮，会在网站右下角创建一个按钮，并隐藏原始按钮
   rightside_button: true
   # 原始聊天按钮在向上滚动时显示，向下滚动时隐藏
@@ -1183,7 +1183,7 @@ series:
 # https://github.com/paulrosen/abcjs
 abcjs:
   # 是否启用 ABCJS
-  enable: true
+  enable: false
   # 是否每页启用
   per_page: true
 
@@ -1202,7 +1202,7 @@ mermaid:
 # chartjs
 # 参见 https://www.chartjs.org/docs/latest/
 chartjs:
-  enable: true
+  enable: false
   # 除非你瞭解它们的工作原理，否则不要修改。
   # 默认设置仅在未指定 MD 语法时使用。
   # 图表的字体颜色
@@ -1249,7 +1249,7 @@ pjax:
 # 注入 CSS 和脚本 (aplayer/meting)
 aplayerInject:
   # 是否启用注入
-  enable: true
+  enable: false
   # 是否每页启用
   per_page: false
 
@@ -1302,7 +1302,7 @@ pwa:
 # 参见 https://hexo.io/docs/helpers#open-graph
 Open_Graph_meta:
   # 是否启用 Open Graph meta 标签
-  enable: true
+  enable: false
   option:
     # twitter_card:
     # twitter_image:
@@ -1326,9 +1326,9 @@ css_prefix: true
 # 插入代码到 head（在 '</head>' 标签之前）和底部（在 '</body>' 标签之前）
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
+  # 自定义 head 注入
   bottom:
-    # - <script src="xxxx"></script>
+  # 自定义 bottom 注入
 
 # CDN 设置
 # 除非你知道它们的工作原理，否则不要修改以下设置
