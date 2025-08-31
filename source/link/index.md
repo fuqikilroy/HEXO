@@ -16,5 +16,5 @@ random: true
 
     name: 抚七kilroy
     link: https://fuqikilroy.github.io/HEXO/
-    avatar: https://fuqikilroy.github.io/HEXO/source/img/avatar.jpg"
+    avatar: https://fuqikilroy.github.io/HEXO/source/img/avatar.jpg
     descr: 记录与分享技术的每一刻,同时享受生活的点滴
