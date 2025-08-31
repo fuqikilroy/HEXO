@@ -36,19 +36,19 @@ post_asset_folder: true
 relative_link: false
 future: true
 
-syntax_highlighter: 'highlight.js'
+syntax_highlighter: "highlight.js"
 highlight:
   line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace: ""
   wrap: true
   hljs: false
-  exclude_languages: ['mermaid']
+  exclude_languages: ["mermaid"]
 prismjs:
   preprocess: true
   line_number: true
-  tab_replace: ''
-  exclude_languages: ['mermaid']
+  tab_replace: ""
+  exclude_languages: ["mermaid"]
 
 index_generator:
   path: ""
@@ -66,7 +66,7 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: butterfly
+theme: icarus
 
 deploy:
   type: git
@@ -82,7 +82,4 @@ search:
 # 插件
 markdown:
   plugins:
-    - '@renbaoshuo/markdown-it-katex'
-
-
-
+    - "@renbaoshuo/markdown-it-katex"
