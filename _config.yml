@@ -6,7 +6,7 @@ author: 抚七kilroy
 language: zh-CN
 timezone: ""
 
-url: https://github.com/fuqikilroy/HEXO
+url: https://github.com/fuqikilroy/HEXO/
 root: /HEXO/
 permalink: ":year/:month/:day/:title/"
 permalink_defaults: null
