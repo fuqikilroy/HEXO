@@ -1,52 +1,59 @@
-title: Hexo
-subtitle: ''
-description: ''
-keywords: null
-author: John Doe
-language: en
-timezone: ''
-url: https://github.com/fuqikilroy
+title: 抚七 kilroy
+subtitle: "记录与分享技术的每一刻,同时享受生活的点滴"
+description: "这是抚七kilroy的个人博客，记录与分享技术的每一刻、学习笔记及生活随笔。"
+keywords: "抚七kilroy, 前后端开发,C++,游戏开发, Web技术, 博客, 学习笔记"
+author: 抚七kilroy
+language: zh-CN
+timezone: ""
+
+url: https://github.com/fuqikilroy/HEXO
 root: /HEXO/
-permalink: ':year/:month/:day/:title/'
+permalink: ":year/:month/:day/:title/"
 permalink_defaults: null
 pretty_urls:
   trailing_index: true
   trailing_html: true
+
 source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: ':lang'
+i18n_dir: ":lang"
 skip_render: null
-new_post_name: ':title.md'
+
+new_post_name: ":year-:month-:day-:title.md"
 default_layout: post
 titlecase: false
 external_link:
   enable: true
   field: site
-  exclude: ''
+  exclude: ""
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
-syntax_highlighter: highlight.js
+
+syntax_highlighter: 'highlight.js'
 highlight:
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
+  exclude_languages: ['mermaid']
 prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+  exclude_languages: ['mermaid']
+
 index_generator:
-  path: ''
+  path: ""
   per_page: 10
-  order_by: '-date'
+  order_by: "-date"
 default_category: uncategorized
 category_map: null
 tag_map: null
@@ -54,13 +61,28 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 updated_option: mtime
-per_page: 10
+per_page: 7
 pagination_dir: page
 include: null
 exclude: null
 ignore: null
 theme: butterfly
+
 deploy:
   type: git
   repo: https://github.com/fuqikilroy/HEXO.git
   branch: gh-pages
+
+# 本地搜索
+search:
+  path: search.xml
+  field: all
+  content: true
+
+# 插件
+markdown:
+  plugins:
+    - '@renbaoshuo/markdown-it-katex'
+
+
+

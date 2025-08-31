@@ -1,0 +1,25 @@
+# 说说数据文件
+# 顺序不重要，key和tags可以没有   -- key用于唯一标识说说（可以评论），tags用于分类
+
+- content: |
+    纪念此刻网站上线！
+  date: 2025-8-31 18:00:00
+  author: 抚七kilroy
+  avatar: ../img/avatar.jpg
+  key: key-0
+  tags:
+    - tag1
+    - tag2
+    - tag3
+
+- content: |
+    nothing is impossible, the word itself says "I'm possible"!
+  date: 2025-8-31 19:21:39
+  author: 抚七kilroy
+  avatar: ../img/avatar.jpg
+
+- author: 抚七kilroy
+  avatar: ../img/avatar.jpg
+  date: 2025-8-31 19:25:15
+  content: |
+    no game no life
