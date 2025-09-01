@@ -672,7 +672,7 @@ comments:
   # 如果不需要评论功能，保持为空
   # 选择：Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # 两个评论系统的格式：Disqus,Waline,Giscus
-  use:
+  use: Giscus
   # 按钮旁边显示评论系统名称
   text: true
   # 懒加载：评论系统将在评论元素进入浏览器视口时加载
@@ -1247,9 +1247,9 @@ pjax:
 # 注入 CSS 和脚本 (aplayer/meting)
 aplayerInject:
   # 是否启用注入
-  enable: false
+  enable: true
   # 是否每页启用
-  per_page: false
+  per_page: true
 
 # Snackbar - Toast 通知
 # https://github.com/polonel/SnackBar
@@ -1326,7 +1326,8 @@ inject:
   head:
   # 自定义 head 注入
   bottom:
-  # 自定义 bottom 注入
+    # 自定义 bottom 注入
+    - <div class="aplayer no-destroy" data-id="6828989429" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
 
 # CDN 设置
 # 除非你知道它们的工作原理，否则不要修改以下设置
