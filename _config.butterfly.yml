@@ -18,7 +18,6 @@ menu:
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   公告栏: /contact/ || fas fa-clipboard-list
-
   关于||fa fa-list || hide:
     抚七: /aboutme/ || fas fa-heartbeat
     日志: /shuoshuo/ || fas fa-comment
@@ -58,7 +57,7 @@ code_blocks:
 #   icon: 链接 || 描述 || 颜色
 social:
   fab fa-github: https://github.com/fuqikilroy || GitHub
-  fab fa-bilibili: https://space.bilibili.com/515661944/lists || bilibili
+  fab fa-bilibili: https://space.bilibili.com/515661944 || bilibili
   fab fa-tiktok: https://www.douyin.com/user/MS4wLjABAAAAsjEOsMZLnATWzRJu-eyeyRgWTKXidHcSKaZYGxZkb2E?from_tab_name=main || TikTok
   fab fa-steam: https://steamcommunity.com/profiles/76561199423246597 || Steam
   fas fa-envelope: mailto:215890173@qq.com || Email
@@ -672,7 +671,7 @@ comments:
   # 如果不需要评论功能，保持为空
   # 选择：Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # 两个评论系统的格式：Disqus,Waline,Giscus
-  use: Giscus
+  use: # Giscus
   # 按钮旁边显示评论系统名称
   text: true
   # 懒加载：评论系统将在评论元素进入浏览器视口时加载
