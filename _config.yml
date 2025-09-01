@@ -6,9 +6,10 @@ author: 抚七kilroy
 language: zh-CN
 timezone: ""
 
-
-url: https://fuqikilroy.github.io/HEXO  # 注意这里要包含仓库名
-root: /HEXO/ # 注意这里以斜杠开头和结尾
+# 注意这里要包含仓库名
+url: https://fuqikilroy.github.io/HEXO
+# 注意这里以斜杠开头和结尾
+root: /HEXO/ 
 
 permalink: ":year/:month/:day/:title/"
 permalink_defaults: null
