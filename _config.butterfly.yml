@@ -673,7 +673,7 @@ comments:
   # 如果不需要评论功能，保持为空
   # 选择：Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # 两个评论系统的格式：Disqus,Waline
-  use: # Giscus
+  use:  Giscus
   # 按钮旁边显示评论系统名称
   text: true
   # 懒加载：评论系统将在评论元素进入浏览器视口时加载
@@ -738,7 +738,7 @@ valine:
   # 评论框背景图片
   bg: img/wallpaper/lucy.png
   # 使用 Valine 的访客计数作为页面的访客量
-  visitor: true
+  visitor: false
   # 其他可选配置
   option:
 
@@ -750,10 +750,9 @@ waline:
   # 评论框背景图片
   bg: img/wallpaper/lucy.png
   # 使用 Waline 的访客计数作为页面的访客量
-  pageview: true
+  pageview: false
   # 其他可选配置
-  option: https://unpkg.com/@waline/client@v3/dist/waline.css
-    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js'
+  option: 
 
 # Utterances 评论插件配置
 # 官方文档：https://utteranc.es/
