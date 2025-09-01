@@ -17,7 +17,6 @@ menu:
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  # 公告栏: /contact/ || fas fa-paper-plane
   公告栏: /contact/ || fas fa-clipboard-list
 
   关于||fa fa-list || hide:
