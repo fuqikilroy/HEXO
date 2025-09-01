@@ -73,7 +73,7 @@ theme: butterfly
 deploy:
   type: git
   repo: https://github.com/fuqikilroy/HEXO.git
-  branch: gh-pages # 部署到 gh-pages 分支
+  branch: gh-pages 
 
 # 本地搜索
 search:
