@@ -89,6 +89,7 @@ default_top_img: /img/wallpaper/default.jpg
 # 主页的横幅图片
 index_img: /img/wallpaper/index_img.webp
 
+
 # 归档页的横幅图片
 archive_img: /img/wallpaper/archive_top.webp
 
