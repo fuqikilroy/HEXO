@@ -141,7 +141,7 @@ error_img:
   # 友链页面的错误图片
   flink: /img/friend_404.gif
   # 文章页面的错误图片
-  post_page: /img/404.webp
+  post_page: /img/404.jpg
 
 # 简单的 404 页面
 error_404:
