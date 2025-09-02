@@ -57,7 +57,7 @@ code_blocks:
 #   icon: 链接 || 描述 || 颜色
 social:
   fab fa-github: https://github.com/fuqikilroy || GitHub
-  fab fa-bilibili: https://space.bilibili.com/515661944/lists || bilibili
+  fab fa-bilibili: https://space.bilibili.com/515661944/lists/ || bilibili
   fab fa-tiktok: https://www.douyin.com/user/MS4wLjABAAAAsjEOsMZLnATWzRJu-eyeyRgWTKXidHcSKaZYGxZkb2E?from_tab_name=main || TikTok
   fab fa-steam: https://steamcommunity.com/profiles/76561199423246597 || Steam
   fas fa-envelope: mailto:215890173@qq.com || Email
