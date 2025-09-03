@@ -70,11 +70,13 @@ social:
 # --------------------------------------
 
 # 网站的 favicon 图标
-favicon: /img/favicon.ico
+# favicon: /img/favicon.ico
+favicon: https://bu.dusays.com/2025/09/03/68b7fc63d6771.ico
 # 头像设置
 avatar:
   # 头像图片链接
-  img: /img/avatar.jpg
+  # img: /img/avatar.jpg
+  img: https://bu.dusays.com/2025/09/03/68b7fc642c8da.jpg
   # 是否启用头像效果
   effect: false
 
@@ -82,33 +84,40 @@ avatar:
 disable_top_img: false
 
 # 如果页面未设置横幅，则显示默认的横幅图片
-default_top_img: /img/wallpaper/default.jpg
+# default_top_img: /img/wallpaper/default.jpg
+default_top_img: https://bu.dusays.com/2025/09/03/68b7eac6ae9fb.jpg
 
 # 主页的横幅图片
 # index_img: /img/wallpaper/index_img.webp
 index_img: https://bu.dusays.com/2025/09/03/68b7eabbf0a54.webp
 
 # 归档页的横幅图片
-archive_img: /img/wallpaper/archive_top.webp
+# archive_img: /img/wallpaper/archive_top.webp
+archive_img: https://bu.dusays.com/2025/09/03/68b7f047588d4.webp
 
 # 注意: 是标签页（单个标签），不是标签页面（所有标签）
-tag_img: /img/wallpaper/tags_top.webp
+# tag_img: /img/wallpaper/tags_top.webp
+tag_img: https://bu.dusays.com/2025/09/03/68b7f0536352b.webp
 
 # 标签页的横幅图片，可以为每个标签设置横幅图片
 # 格式:
 #  - 标签名: 图片链接
-tag_per_img: /img/wallpaper/tags_top.webp
+# tag_per_img: /img/wallpaper/tags_top.webp
+tag_per_img: https://bu.dusays.com/2025/09/03/68b7f0536352b.webp
 
 # 注意: 是分类页（单个分类），不是分类页面（所有分类）
-category_img: /img/wallpaper/category_top.webp
+# category_img: /img/wallpaper/category_top.webp
+category_img: https://bu.dusays.com/2025/09/03/68b7eabb50723.webp
 
 # 分类页的横幅图片，可以为每个分类设置横幅图片
 # 格式:
 #  - 分类名: 图片链接
-category_per_img: /img/wallpaper/category_top.webp
+# category_per_img: /img/wallpaper/category_top.webp
+category_per_img: https://bu.dusays.com/2025/09/03/68b7eabb50723.webp
 
 # 页脚的背景图片
-footer_img: /img/wallpaper/index_img.webp
+# footer_img: /img/wallpaper/index_img.webp
+footer_img: https://bu.dusays.com/2025/09/03/68b7eabbf0a54.webp
 
 # 网站背景
 # 可以设置为颜色或图片
@@ -127,22 +136,33 @@ cover:
   # 当未设置封面时，显示默认封面
   default_cover:
     - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-    - /img/wallpaper/cover/cover (1).webp
-    - /img/wallpaper/cover/cover (2).webp
-    - /img/wallpaper/cover/cover (3).webp
-    - /img/wallpaper/cover/cover (4).webp
-    - /img/wallpaper/cover/cover (5).webp
-    - /img/wallpaper/cover/cover (6).webp
-    - /img/wallpaper/cover/cover (7).webp
-    - /img/wallpaper/cover/cover (8).webp
-    - /img/wallpaper/cover/cover (9).webp
+    - https://bu.dusays.com/2025/09/03/68b7f0464fa99.webp
+    - https://bu.dusays.com/2025/09/03/68b7fed6127d6.webp
+    - https://bu.dusays.com/2025/09/03/68b7fed6299e9.webp
+    - https://bu.dusays.com/2025/09/03/68b7fed6343a1.webp
+    - https://bu.dusays.com/2025/09/03/68b7fed650242.webp
+    - https://bu.dusays.com/2025/09/03/68b7fed7668b3.webp
+    - https://bu.dusays.com/2025/09/03/68b7f047588d4.webp
+    - https://bu.dusays.com/2025/09/03/68b7fed7c3293.webp
+    - https://bu.dusays.com/2025/09/03/68b7f0536352b.webp
+    # - /img/wallpaper/cover/cover (1).webp
+    # - /img/wallpaper/cover/cover (2).webp
+    # - /img/wallpaper/cover/cover (3).webp
+    # - /img/wallpaper/cover/cover (4).webp
+    # - /img/wallpaper/cover/cover (5).webp
+    # - /img/wallpaper/cover/cover (6).webp
+    # - /img/wallpaper/cover/cover (7).webp
+    # - /img/wallpaper/cover/cover (8).webp
+    # - /img/wallpaper/cover/cover (9).webp
 
 # 替换损坏的图片
 error_img:
   # 友链页面的错误图片
-  flink: /img/friend_404.gif
+  # flink: /img/friend_404.gif
+  flink: https://bu.dusays.com/2021/03/27/0106da541a922.gif
   # 文章页面的错误图片
-  post_page: /img/404.webp
+  # post_page: /img/404.webp
+  post_page: https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp
 
 # 简单的 404 页面
 error_404:

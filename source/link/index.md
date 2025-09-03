@@ -3,7 +3,8 @@ title: 友情链接
 date: 2025-08-30 00:00:00
 type: "link"
 random: true
-top_img: /img/wallpaper/link.webp
+# top_img: /img/wallpaper/link.webp
+top_img: https://bu.dusays.com/2025/09/03/68b7eabc23885.webp
 # flink_url: xxxxx     # 远程拉取
 ---
 
