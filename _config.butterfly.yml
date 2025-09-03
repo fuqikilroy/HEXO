@@ -22,6 +22,7 @@ menu:
     抚七: /aboutme/ || fas fa-heartbeat
     日志: /shuoshuo/ || fas fa-comment
     友链: /link/ || fas fa-link
+    留言板: /comments/ || fas fa-envelope-open
 
 # 清单||fa fa-heartbeat || hide:
 #  音乐: /music/ || fas fa-music
@@ -1367,3 +1368,42 @@ CDN:
   custom_format:
 
   option:
+
+
+# envelope_comment
+# see https://akilar.top/posts/e2d3c450/
+envelope_comment:
+  enable: true #控制开关
+  custom_pic:      
+    cover: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
+    line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png #信笺底部图片
+    beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
+    afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png # 信封后半部分
+  message: #信笺正文，多行文本，写法如下
+    - 有什么想问的？
+    - 有什么想问的？
+    - 有什么想吐槽的？
+  bottom: 自动手记人偶竭诚为您服务！ #仅支持单行文本
+  height: #1050px #信笺高度，建议 950px - 1250px 之间
+  path: #【可选】 comments的路径名称。默认为 comments
+  front_matter: #【可选】 front-matter 的配置
+    title: 留言板
+    tags:
+      - 信笺
+    categories:
+      - 其他
+    comments: true
+    # mathjax: true
+    # mermaid: true
+    # chartjs: true
+    # abcjs: true
+    # lightbox: fancybox
+    # sidebar:
+    #   card_categories:
+    #     enable: true
+    #   card_tags:
+    #     enable: true
+    #   card_archives:
+    #     enable: true
+    #   card_post_series:
+    #     enable: true
