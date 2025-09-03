@@ -62,8 +62,8 @@ social:
   fab fa-tiktok: https://www.douyin.com/user/MS4wLjABAAAAsjEOsMZLnATWzRJu-eyeyRgWTKXidHcSKaZYGxZkb2E?from_tab_name=main || TikTok
   fab fa-steam: https://steamcommunity.com/profiles/76561199423246597 || Steam
   fas fa-envelope: mailto:215890173@qq.com || Email
-  fab fa-qq: img/qq.jpg || qq
-  fab fa-weixin: img/wechat.jpg || weixin
+  fab fa-qq: https://bu.dusays.com/2025/09/03/68b82f0c1e19b.webp || qq
+  fab fa-weixin: https://bu.dusays.com/2025/09/03/68b82f0c2520d.webp || weixin
   fas fa-c: https://blog.csdn.net/kilroy_7 || CSDN
 
 # --------------------------------------
@@ -76,8 +76,8 @@ favicon: https://bu.dusays.com/2025/09/03/68b7fc63d6771.ico
 # 头像设置
 avatar:
   # 头像图片链接
-  # img: /img/avatar.jpg
-  img: https://bu.dusays.com/2025/09/03/68b7fc642c8da.jpg
+  # img: /img/avatar.webp
+  img: https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp
   # 是否启用头像效果
   effect: false
 
@@ -293,10 +293,12 @@ reward:
   # 打赏案例文本
   text:
   QR_code:
-    - img: /img/wechatpay.jpg
+    # - img: /img/wechatpay.webp
+    - img: https://bu.dusays.com/2025/09/03/68b82f0c04ba6.webp
       link:
       text: 微信
-    - img: /img/alipay.jpg
+    # - img: /img/alipay.webp
+    - img: https://bu.dusays.com/2025/09/03/68b82f0bdd547.webp
       link:
       text: 支付宝
 
@@ -1349,6 +1351,8 @@ inject:
   bottom:
     # 自定义 bottom 注入
     - <div class="aplayer no-destroy" data-id="6828989429" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
+    - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    - <script>LA.init({id:"3NKRVYxaQRjDfcHj",ck:"3NKRVYxaQRjDfcHj"})</script>
 
 # CDN 设置
 # 除非你知道它们的工作原理，否则不要修改以下设置
@@ -1380,10 +1384,12 @@ envelope_comment:
     beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
     afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png # 信封后半部分
   message: #信笺正文，多行文本，写法如下
-    - 有什么想问的？
-    - 有什么想问的？
-    - 有什么想吐槽的？
-  bottom: 自动手记人偶竭诚为您服务！ #仅支持单行文本
+    - 尊敬的访客，您好。
+    - 若您有想传达的心意、未诉诸言语的思念，
+    - 请允许我以笔尖为您承载。
+    - 您今日是否有想留下的讯息或疑问？
+    - 或是希望倾诉的感怀？
+  bottom: 自动手记人偶薇尔莉特·伊芙加登，恭候您的嘱托。
   height: #1050px #信笺高度，建议 950px - 1250px 之间
   path: #【可选】 comments的路径名称。默认为 comments
   front_matter: #【可选】 front-matter 的配置
