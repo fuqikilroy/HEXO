@@ -20,3 +20,8 @@ top_img: https://bu.dusays.com/2025/09/03/68b7eabc23885.webp
     link: https://fuqikilroy.github.io/HEXO/
     avatar: https://bu.dusays.com/2025/09/03/68b7fc642c8da.jpg
     descr: 记录与分享技术的每一刻,同时享受生活的点滴
+
+
+
+# 一些有趣的网页
+

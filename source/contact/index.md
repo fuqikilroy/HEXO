@@ -9,4 +9,5 @@ top_img: https://bu.dusays.com/2025/09/03/68b7eabba1ced.webp
 
 # 项目展示视频一般放在Bilibili
 
-点击个人名片即可跳转
+点击右侧→个人名片的b站图标即可跳转
+
