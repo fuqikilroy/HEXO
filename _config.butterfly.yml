@@ -85,7 +85,8 @@ disable_top_img: false
 default_top_img: /img/wallpaper/default.jpg
 
 # 主页的横幅图片
-index_img: /img/wallpaper/index_img.webp
+# index_img: /img/wallpaper/index_img.webp
+index_img: https://bu.dusays.com/2025/09/03/68b7eabbf0a54.webp
 
 # 归档页的横幅图片
 archive_img: /img/wallpaper/archive_top.webp
