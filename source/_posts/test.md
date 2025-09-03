@@ -11,4 +11,13 @@ tags: test
 
 注意这个图片插入的语法
 {% asset_img 0.jpg This is an example image %}
-{% asset_img ./test/0.jpg This is an example image %}
+
+
+
+asserts
+
+{% asset_img 1.png This is an example image %}
+
+2
+
+{% asset_img ./assets/1.png This is an example image %}f
