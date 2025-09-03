@@ -6,3 +6,7 @@ top_img: https://bu.dusays.com/2025/09/03/68b7eabba1ced.webp
 ---
 
 # 该网站主要为个人学习和展示qwq
+
+# 项目展示视频一般放在Bilibili
+
+点击个人名片即可跳转

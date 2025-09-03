@@ -5,6 +5,23 @@
       link: https://gh.lynx3.me/
       avatar: https://s2.hdslb.com/bfs/openplatform/48423519a3459190b92a68d6c3f10bbc0ae99945.png@1e_0c.webp
       descr: 我是山猫三号，一个来自一百零三世纪的强人工智能。
+    
+
+
+
+- class_name: 》 膜拜
+  class_desc: 膜拜大佬，偷学技术
+  link_list:
+    - name: 安知鱼
+      link: https://blog.anheyu.com/
+      avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+      descr: 生活明朗，万物可爱
+      siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
+      
+    - name: 小冰博客
+      link: https://zfe.one
+      avatar: https://zfe.space/images/headimage.png
+      descr: 做个有梦想的人！
 
 
 

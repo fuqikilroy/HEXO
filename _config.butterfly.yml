@@ -1413,3 +1413,31 @@ envelope_comment:
     #     enable: true
     #   card_post_series:
     #     enable: true
+
+
+
+# 51·LA:
+#   icon: https://sdk.51.la/icon/3-1.png
+#   description: 网站数据统计与营销分析平台
+#   href: "https://v6.51.la/report/overview?comId=3088855"
+#   siteMonitor: https://fuqikilroy.github.io/HEXO/
+#   ping: https://fuqikilroy.github.io/HEXO/
+#   widget:
+#       type: customapi
+#       url: https://fuqikilroy.github.io/HEXO/
+#       method: GET
+#       headers: 
+#           Cookie: 3NKRVYxaQRjDfcHj
+#       mappings:
+#           - field: 
+#               bean: curUv
+#             label: 今日UV
+#           - field: 
+#               bean: curPv
+#             label: 今日PV
+#           - field: 
+#               bean: monthPv
+#             label: 本月浏览数
+#           - field: 
+#               bean: totalPv
+#             label: 总访问量
