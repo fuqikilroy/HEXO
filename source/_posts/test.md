@@ -3,6 +3,8 @@ title: test
 date: 2025-08-29 15:35:36
 categories: test
 tags: test
+typora-root-url: test
+typora-copy-images-to: test
 ---
 
 # 测试
@@ -16,8 +18,23 @@ tags: test
 
 asserts
 
-{% asset_img 1.png This is an example image %}
+{% asset_img 1.png asserts test %}
 
-2
 
-{% asset_img ./assets/1.png This is an example image %}f
+test
+
+{% asset_img 1.png test2 %}
+
+
+3
+
+{% asset_img ./assets/1.png  test3 %}
+
+
+.md
+![1756976230230](test/1756976230230.png)
+
+
+test4
+{% asset_img 1756976230230.png  test4 %}
+
