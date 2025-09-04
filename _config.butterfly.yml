@@ -282,7 +282,7 @@ post_copyright:
   # 是否进行文章 URL 解码
   decode: false
   # 作者链接
-  author_href:
+  author_href: https://fuqikilroy.github.io/HEXO/
   # 许可证类型
   license: CC BY-NC-SA 4.0
   # 许可证链接
