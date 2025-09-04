@@ -5,7 +5,8 @@
     纪念此刻网站上线！
   date: 2025-8-31 18:00:00
   author: 抚七kilroy
-  avatar: ../img/avatar.jpg
+  # avatar: ../img/avatar.jpg
+  avatar: https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp
   key: key-0
   tags:
     - tag1
@@ -16,10 +17,10 @@
     nothing is impossible, the word itself says "I'm possible"!
   date: 2025-8-31 19:21:39
   author: 抚七kilroy
-  avatar: ../img/avatar.jpg
+  avatar: https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp
 
 - author: 抚七kilroy
-  avatar: ../img/avatar.jpg
+  avatar: https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp
   date: 2025-8-31 19:25:15
   content: |
     no game no life

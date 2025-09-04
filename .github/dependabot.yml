@@ -3,5 +3,7 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: daily
+    interval: monthly
   open-pull-requests-limit: 20
+  # ignored-updates:
+  #     - dependency-name: "package-name" # 忽略特定包的更新
