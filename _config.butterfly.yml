@@ -20,7 +20,8 @@ menu:
   公告栏: /contact/ || fas fa-clipboard-list
   关于||fa fa-list || hide:
     抚七: /aboutme/ || fas fa-heartbeat
-    追番: /zhuifan/ || fas fa-tv
+    追番: /zhuifan/ || fas fa-bilibili
+    追剧: /zhuiju/ || fas fa-tv
     日志: /shuoshuo/ || fas fa-comment
     友链: /link/ || fas fa-link
     留言板: /comments/ || fas fa-envelope-open

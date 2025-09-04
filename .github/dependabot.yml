@@ -5,5 +5,5 @@ updates:
   schedule:
     interval: monthly
   open-pull-requests-limit: 20
-  # ignored-updates:
-  #     - dependency-name: "package-name" # 忽略特定包的更新
+  ignored-updates:
+      - dependency-name: "hexo-util" # 忽略特定包的更新

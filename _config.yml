@@ -113,16 +113,48 @@ live2d:
   mobile:
     show: false # 手机中是否展示
 
-# 追番功能
-bilibili:
-  # 是否启用
-  enable: true
-  # 你的B站 vmid
-  vmid: 515661944
-  # 拓展JSON的文件名（/source/_data/*.json）
-  extra: extra_bangumis
-  # 锁止追番列表，缺省为false
-  locks:
-    wantLock: false
-    ingLock: false
-    edLock: false
+# # # 追番功能
+# # bilibili:
+#   # 是否启用
+#   enable: true
+#   # 你的B站 vmid
+#   vmid: 515661944
+#   # 拓展JSON的文件名（/source/_data/*.json）
+#   extra: extra_bangumis
+#   # 锁止追番列表，缺省为false
+#   locks:
+#     wantLock: false
+#     ingLock: false
+#     edLock: false
+
+bangumi: # 追番设置
+  enable: true           # 是否启用
+  source: bili          # 数据源
+  path: zhuifan/index.html  # 页面路径
+  vmid: 515661944           # 用户ID
+  title: '追番列表'      # 页面标题
+  quote: '收藏从未停止，追番晚点开始……' # 页面引言
+  show: 2              # 初始显示页面: 0=想看, 1=在看, 2=看过
+  lazyload: true       # 是否启用图片懒加载
+  metaColor:           # meta 信息字体颜色
+  color:               # 简介字体颜色
+  webp: true          # 是否使用 webp 格式图片
+  progress: true      # 是否显示进度条
+
+cinema: # 追剧设置
+  enable: true           # 是否启用
+  source: bili          # 数据源
+  path: zhuiju/index.html  # 页面路径
+  vmid: 515661944           # 用户ID
+  title: '追剧列表'      # 页面标题
+  quote: '小心！会停不下来！' # 页面引言
+  show: 2              # 初始显示页面: 0=想看, 1=在看, 2=看过
+  lazyload: true       # 是否启用图片懒加载
+  metaColor:           # meta 信息字体颜色
+  color:               # 简介字体颜色
+  webp: true          # 是否使用 webp 格式图片
+  progress: true      # 是否显示进度条
+
+game: # 游戏设置，仅支持source: bgmv0
+  enable: false           # 是否启用
+  source: bgmv0
