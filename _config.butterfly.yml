@@ -20,6 +20,7 @@ menu:
   公告栏: /contact/ || fas fa-clipboard-list
   关于||fa fa-list || hide:
     抚七: /aboutme/ || fas fa-heartbeat
+    追番: /zhuifan/ || fas fa-tv
     日志: /shuoshuo/ || fas fa-comment
     友链: /link/ || fas fa-link
     留言板: /comments/ || fas fa-envelope-open
@@ -1262,7 +1263,7 @@ note:
 # https://github.com/MoOx/pjax
 pjax:
   # 是否启用 pjax
-  enable: true
+  enable: false
   # 排除指定页面不使用 pjax，如 '/music/'
   exclude:
     # - /xxxxxx/
@@ -1350,7 +1351,9 @@ inject:
   # 自定义 head 注入
   bottom:
     # 自定义 bottom 注入
-    - <div class="aplayer no-destroy" data-id="6828989429" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
+    # music platform: netease, tencent, kugou, xiami, baidu
+    # 6828989429
+    - <div class="aplayer no-destroy" data-id="7666028341" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
     - <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
     - <script>LA.init({id:"3NKRVYxaQRjDfcHj",ck:"3NKRVYxaQRjDfcHj"})</script>
 
@@ -1413,6 +1416,9 @@ envelope_comment:
     #     enable: true
     #   card_post_series:
     #     enable: true
+
+
+
 
 
 

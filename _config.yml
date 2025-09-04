@@ -112,3 +112,17 @@ live2d:
     height: 300 #控制看板娘大小
   mobile:
     show: false # 手机中是否展示
+
+# 追番功能
+bilibili:
+  # 是否启用
+  enable: true
+  # 你的B站 vmid
+  vmid: 515661944
+  # 拓展JSON的文件名（/source/_data/*.json）
+  extra: extra_bangumis
+  # 锁止追番列表，缺省为false
+  locks:
+    wantLock: false
+    ingLock: false
+    edLock: false

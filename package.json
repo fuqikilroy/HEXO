@@ -14,6 +14,7 @@
   "dependencies": {
     "@renbaoshuo/markdown-it-katex": "^2.0.2",
     "hexo": "^7.3.0",
+    "hexo-bilibili-bangumi": "^2.0.1",
     "hexo-butterfly-envelope": "^1.0.15",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -34,6 +35,7 @@
     "live2d-widget-model-koharu": "^1.0.5",
     "live2d-widget-model-miku": "^1.0.5",
     "live2d-widget-model-wanko": "^1.0.5",
+    "node-fetch": "^2.7.0",
     "valine": "^1.5.3"
   }
 }
