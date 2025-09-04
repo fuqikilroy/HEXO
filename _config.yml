@@ -128,7 +128,7 @@ live2d:
 #     edLock: false
 
 bangumi: # 追番设置
-  enable: true           # 是否启用
+  enable: false           # 是否启用
   source: bili          # 数据源
   path: zhuifan/index.html  # 页面路径
   vmid: 515661944           # 用户ID
@@ -142,7 +142,7 @@ bangumi: # 追番设置
   progress: true      # 是否显示进度条
 
 cinema: # 追剧设置
-  enable: true           # 是否启用
+  enable: false           # 是否启用
   source: bili          # 数据源
   path: zhuiju/index.html  # 页面路径
   vmid: 515661944           # 用户ID
