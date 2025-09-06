@@ -113,22 +113,10 @@ live2d:
   mobile:
     show: false # 手机中是否展示
 
-# # # 追番功能
-# # bilibili:
-#   # 是否启用
-#   enable: true
-#   # 你的B站 vmid
-#   vmid: 515661944
-#   # 拓展JSON的文件名（/source/_data/*.json）
-#   extra: extra_bangumis
-#   # 锁止追番列表，缺省为false
-#   locks:
-#     wantLock: false
-#     ingLock: false
-#     edLock: false
+
 
 bangumi: # 追番设置
-  enable: false           # 是否启用
+  enable: true           # 是否启用
   source: bili          # 数据源
   path: zhuifan/index.html  # 页面路径
   vmid: 515661944           # 用户ID
@@ -142,7 +130,7 @@ bangumi: # 追番设置
   progress: true      # 是否显示进度条
 
 cinema: # 追剧设置
-  enable: false           # 是否启用
+  enable: true           # 是否启用
   source: bili          # 数据源
   path: zhuiju/index.html  # 页面路径
   vmid: 515661944           # 用户ID
