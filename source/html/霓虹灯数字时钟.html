@@ -7,11 +7,13 @@
   <title>霓虹灯数字时钟</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <style>
+    .overlay-content {position: fixed ;top: 0;left: 0;width: 100vw;height: 100vh;z-index: 99999; /* 非常高的值以确保覆盖全局 */background-color: black; /* 根据需要设置背景色 */overflow: auto; /* 允许内容滚动 */}
     *{margin:0;padding:0;box-sizing:border}body{display:flex;justify-content:center;align-items:center;min-height:100vh;overflow:hidden;background:#2f363e}.clock{position:relative;width:280px;height:280px;display:flex;justify-content:center;align-items:center;scale:2;box-shadow:inset 5px 5px 25px rgba(0,0,0,0.25);border-radius:50%}#time{position:relative;width:250px;height:250px;display:flex;justify-content:center;align-items:center}#time .circle{position:absolute;display:flex;justify-content:center;align-items:center}#time .circle svg{position:relative;transform:rotate(270deg)}#time .circle:nth-child(1) svg{width:250px;height:250px}#time .circle:nth-child(2) svg{width:210px;height:210px}#time .circle:nth-child(3) svg{width:170px;height:170px}#time .circle svg circle{width:100%;height:100%;fill:transparent;stroke-width:5;stroke:var(--clr);transform:translate(5px,5px);opacity:0.25}#time .circle:nth-child(1) svg circle{stroke-dasharray:760;stroke-dashoffset:760}#time .circle:nth-child(2) svg circle{stroke-dasharray:630;stroke-dashoffset:630}#time .circle:nth-child(3) svg circle{stroke-dasharray:510;stroke-dashoffset:510}.dots{position:absolute;width:100%;height:100%;display:flex;align-items:flex-start;justify-content:center;z-index:10}.dots::before{content:"";position:absolute;top:-3px;width:15px;height:15px;background:var(--clr);border-radius:50%;box-shadow:0 0 20px var(--clr),0 0 40px var(--clr),0 0 60px var(--clr),0 0 80px var(--clr)}.niddles{position:absolute;width:200px;height:200px;border-radius:50%;display:flex;justify-content:center;align-items:flex-start;z-index:10}.niddles i{position:absolute;width:2px;background:var(--clr2);height:50%;opacity:0.75;border-radius:6px;transform-origin:bottom;transform:scaleY(0.5)}.niddles.niddles2{width:170px;height:170px;z-index:9}.niddles.niddles2 i{width:3px}.niddles.niddles3{width:140px;height:140px;z-index:8}.niddles.niddles3 i{width:4px}#time span{position:absolute;inset:55px;text-align:center;color:#999;font-family:Cambria,Cochin,Georgia,Times,"Times New Roman",serif;transform:rotate(calc(30deg * var(--i)))}#time span b{font-size:0.75em;font-weight:500;display:inline-block;transform:rotate(calc(-30deg * var(--i)))}
   </style>
 </head>
 
 <body>
+  <div class="overlay-content">
   <div class="clock">
     <div id="time">
       <div class="circle" style="--clr:#ff2972">
@@ -49,6 +51,7 @@
       <span style="--i:11;"><b>11</b></span>
       <span style="--i:12;"><b>12</b></span>
     </div>
+  </div>
   </div>
 </body>
 <script>

@@ -13,6 +13,18 @@
         box-sizing: border-box;
       }
 
+      .overlay-content 
+      {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99999; /* 非常高的值以确保覆盖全局 */
+        background-color: black; /* 根据需要设置背景色 */
+        overflow: auto; /* 允许内容滚动 */
+      }
+
       html,
       body {
         height: 100%;
@@ -1201,6 +1213,7 @@
     </style>
   </head>
   <body>
+    <div class="overlay-content">
     <div class="solar-syst">
       <div class="sun"></div>
       <div class="mercury"></div>
@@ -1213,6 +1226,7 @@
       <div class="neptune"></div>
       <div class="pluto"></div>
       <div class="asteroids-belt"></div>
+    </div>
     </div>
   </body>
 </html>

@@ -18,6 +18,16 @@
           max-width: 100%;
         }
       }
+      .overlay-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99999; /* 非常高的值以确保覆盖全局 */
+        background-color: white; /* 根据需要设置背景色 */
+        overflow: auto; /* 允许内容滚动 */
+      }
       html {
         color-scheme: dark;
         background-color: canvas;
@@ -4054,6 +4064,7 @@
     </style>
   </head>
   <body>
+    <div class="overlay-content">
     <table class="xo shiny-edges">
       <tr>
         <td tabindex="0">&nbsp;</td>
@@ -4089,6 +4100,7 @@
     <div class="pyro">
       <div class="before"></div>
       <div class="after"></div>
+    </div>
     </div>
     <script>
       const grid = document.querySelector('.xo');
@@ -4407,5 +4419,5 @@
         }
       });
     </script>
-  </body>
+</body>
 </html>

@@ -18,7 +18,7 @@ typora-copy-images-to: test
 
 asserts
 
-{% asset_img 1.png asserts test %}
+{% asset_img 2.png asserts test %}
 
 
 test
@@ -36,5 +36,5 @@ test
 
 
 test4
-{% asset_img 1756976230230.png  test4 %}
+{% asset_img 1756976121936.png  test4 %}
 

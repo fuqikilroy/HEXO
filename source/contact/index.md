@@ -16,5 +16,19 @@ typora-root-url: ..\_posts\assets
 
 # 有趣的web
 
-[2048]: ../html/2048.html	"2044"
+[若侵权，请通知删除]
+
+**由于样式冲突，建议网页端全屏模式并隐藏侧边栏**
+F11，隐藏侧边栏在右下角悬浮齿轮里的双向箭头里面
+
+[2048](../html/2048.html)
+[别点猫猫](../html/别点猫猫.html)
+[别捅马蜂窝](../html/别捅马蜂窝.html)
+[霓虹灯数字时钟](../html/霓虹灯数字时钟.html)
+[鼠标粒子特效](../html/鼠标粒子特效.html)
+[太阳系](../html/太阳系.html)
+[井字棋](../html/井字棋.html)
+[Rlove](../html/Rlove.html)
+[摆钟](../html/摆钟.html)
+[clock](../html/clock.html)
 
