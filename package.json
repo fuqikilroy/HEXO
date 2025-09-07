@@ -39,7 +39,7 @@
     "live2d-widget-model-koharu": "^1.0.5",
     "live2d-widget-model-miku": "^1.0.5",
     "live2d-widget-model-wanko": "^1.0.5",
-    "node-fetch": "^2.7.0",
+    "node-fetch": "^3.3.2",
     "valine": "^1.5.3"
   }
 }
