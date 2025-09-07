@@ -25,16 +25,16 @@ test
 
 {% asset_img 1.png test2 %}
 
-
 3
 
 {% asset_img ./assets/1.png  test3 %}
 
-
 .md
 ![1756976230230](test/1756976230230.png)
-
 
 test4
 {% asset_img 1756976121936.png  test4 %}
 
+test 5  Typora传到busays
+
+![image-20250907010414406](https://bu.dusays.com/2025/09/07/68bc6992bbd7f.png)

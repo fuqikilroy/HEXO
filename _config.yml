@@ -25,7 +25,7 @@ code_dir: downloads/code
 i18n_dir: ":lang"
 skip_render: null
 
-new_post_name: ":year-:month-:day-:title.md"
+new_post_name: ":year-:month-:day:title.md"
 default_layout: post
 titlecase: false
 external_link:
@@ -34,7 +34,7 @@ external_link:
   exclude: ""
 filename_case: 0
 render_drafts: false
-post_asset_folder: ture
+post_asset_folder: false
 relative_link: false
 future: true
 
@@ -73,7 +73,7 @@ theme: butterfly
 deploy:
   type: git
   repo: https://github.com/fuqikilroy/HEXO.git
-  branch: gh-pages 
+  branch: gh-pages
 
 # 本地搜索
 search:
@@ -85,7 +85,6 @@ search:
 markdown:
   plugins:
     - "@renbaoshuo/markdown-it-katex"
-
 
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
@@ -113,36 +112,47 @@ live2d:
   mobile:
     show: false # 手机中是否展示
 
-
-
 bangumi: # 追番设置
-  enable: true           # 是否启用
-  source: bili          # 数据源
-  path: zhuifan/index.html  # 页面路径
-  vmid: 515661944           # 用户ID
-  title: '追番列表'      # 页面标题
-  quote: '收藏从未停止，追番晚点开始……' # 页面引言
-  show: 2              # 初始显示页面: 0=想看, 1=在看, 2=看过
-  lazyload: true       # 是否启用图片懒加载
-  metaColor:           # meta 信息字体颜色
-  color:               # 简介字体颜色
-  webp: true          # 是否使用 webp 格式图片
-  progress: true      # 是否显示进度条
+  enable: true # 是否启用
+  source: bili # 数据源
+  path: zhuifan/index.html # 页面路径
+  vmid: 515661944 # 用户ID
+  title: "追番列表" # 页面标题
+  quote: "收藏从未停止，追番晚点开始……" # 页面引言
+  show: 2 # 初始显示页面: 0=想看, 1=在看, 2=看过
+  lazyload: true # 是否启用图片懒加载
+  metaColor: # meta 信息字体颜色
+  color: # 简介字体颜色
+  webp: true # 是否使用 webp 格式图片
+  progress: true # 是否显示进度条
 
 cinema: # 追剧设置
-  enable: true           # 是否启用
-  source: bili          # 数据源
-  path: zhuiju/index.html  # 页面路径
-  vmid: 515661944           # 用户ID
-  title: '追剧列表'      # 页面标题
-  quote: '小心！会停不下来！' # 页面引言
-  show: 2              # 初始显示页面: 0=想看, 1=在看, 2=看过
-  lazyload: true       # 是否启用图片懒加载
-  metaColor:           # meta 信息字体颜色
-  color:               # 简介字体颜色
-  webp: true          # 是否使用 webp 格式图片
-  progress: true      # 是否显示进度条
+  enable: true # 是否启用
+  source: bili # 数据源
+  path: zhuiju/index.html # 页面路径
+  vmid: 515661944 # 用户ID
+  title: "追剧列表" # 页面标题
+  quote: "小心！会停不下来！" # 页面引言
+  show: 2 # 初始显示页面: 0=想看, 1=在看, 2=看过
+  lazyload: true # 是否启用图片懒加载
+  metaColor: # meta 信息字体颜色
+  color: # 简介字体颜色
+  webp: true # 是否使用 webp 格式图片
+  progress: true # 是否显示进度条
 
 game: # 游戏设置，仅支持source: bgmv0
-  enable: false           # 是否启用
+  enable: false # 是否启用
   source: bgmv0
+
+# HexoPlusPlus Talk
+# see https://hexoplusplus.js.org
+hpptalk:
+  enable: false
+  domain: https://fuqikilroy.github.io/HEXO/
+  path: shuoshuo
+  limit:
+  start:
+  js:
+  css:
+  option:
+  front_matter:

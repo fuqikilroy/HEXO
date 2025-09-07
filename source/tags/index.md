@@ -6,4 +6,5 @@ orderby: random
 order: 1
 # top_img: /img/wallpaper/tags.webp
 top_img: https://bu.dusays.com/2025/09/03/68b7f0536352b.webp
+comments: false
 ---
