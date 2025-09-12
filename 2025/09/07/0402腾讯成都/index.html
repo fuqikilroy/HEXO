@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【面经】腾讯成都 | 抚七 kilroy</title><meta name="author" content="抚七kilroy"><meta name="copyright" content="抚七kilroy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="腾讯成都  自我介绍 详细讲一下你的项目 并发量和数据传输效率 TCP拥塞机制 进程有几种状态 事务要满足几个特性 B+树特征是什么样的 B+树查询过程  "><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【面经】腾讯成都",
+  "url": "https://fuqikilroy.github.io/HEXO/2025/09/07/0402%E8%85%BE%E8%AE%AF%E6%88%90%E9%83%BD/",
+  "image": "https://bu.dusays.com/2025/09/03/68b7fed6299e9.webp",
+  "datePublished": "2025-09-07T16:37:18.000Z",
+  "dateModified": "2025-09-12T08:23:17.560Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "抚七kilroy",
+      "url": "https://fuqikilroy.github.io/HEXO/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://bu.dusays.com/2025/09/03/68b7fc63d6771.ico"><link rel="canonical" href="https://fuqikilroy.github.io/HEXO/2025/09/07/0402%E8%85%BE%E8%AE%AF%E6%88%90%E9%83%BD/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/HEXO/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "t3arhy0fns");
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/HEXO/',
+  algolia: undefined,
+  localSearch: {"path":"/HEXO/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: 抚七kilroy","link":"链接: ","source":"来源: 抚七 kilroy","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【面经】腾讯成都',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (true) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2021/03/27/0106da541a922.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/HEXO/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/HEXO/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/HEXO/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/HEXO/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/contact/"><i class="fa-fw fas fa-clipboard-list"></i><span> 公告栏</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/HEXO/aboutme/"><i class="fa-fw fas fa-heartbeat"></i><span> 抚七</span></a></li><li><a class="site-page child" href="/HEXO/zhuifan/"><i class="fa-fw fab fa-bilibili"></i><span> 追番</span></a></li><li><a class="site-page child" href="/HEXO/zhuiju/"><i class="fa-fw fas fa-tv"></i><span> 追剧</span></a></li><li><a class="site-page child" href="/HEXO/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 日志</span></a></li><li><a class="site-page child" href="/HEXO/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/HEXO/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://bu.dusays.com/2025/09/03/68b7fed6299e9.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/HEXO/"><span class="site-name">抚七 kilroy</span></a><a class="nav-page-title" href="/HEXO/"><span class="site-name">【面经】腾讯成都</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/HEXO/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/contact/"><i class="fa-fw fas fa-clipboard-list"></i><span> 公告栏</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/HEXO/aboutme/"><i class="fa-fw fas fa-heartbeat"></i><span> 抚七</span></a></li><li><a class="site-page child" href="/HEXO/zhuifan/"><i class="fa-fw fab fa-bilibili"></i><span> 追番</span></a></li><li><a class="site-page child" href="/HEXO/zhuiju/"><i class="fa-fw fas fa-tv"></i><span> 追剧</span></a></li><li><a class="site-page child" href="/HEXO/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 日志</span></a></li><li><a class="site-page child" href="/HEXO/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/HEXO/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">【面经】腾讯成都</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-07T16:37:18.000Z" title="发表于 2025-09-07 16:37:18">2025-09-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-12T08:23:17.560Z" title="更新于 2025-09-12 08:23:17">2025-09-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%B1%82%E8%81%8C%E6%8A%80%E5%B7%A7/">求职技巧</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%B1%82%E8%81%8C%E6%8A%80%E5%B7%A7/%E9%9D%A2%E7%BB%8F/">面经</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%B1%82%E8%81%8C%E6%8A%80%E5%B7%A7/%E9%9D%A2%E7%BB%8F/C/">C++</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">63</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;已经过了&quot;,&quot;messageNext&quot;:&quot;天自上次更新，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2025-09-12 08:23:17&quot;}" hidden></div><h2 id="腾讯成都">腾讯成都</h2>
+<ol>
+<li>自我介绍</li>
+<li>详细讲一下你的项目</li>
+<li>并发量和数据传输效率</li>
+<li>TCP拥塞机制</li>
+<li>进程有几种状态</li>
+<li>事务要满足几个特性</li>
+<li>B+树特征是什么样的</li>
+<li>B+树查询过程</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://fuqikilroy.github.io/HEXO/">抚七kilroy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://fuqikilroy.github.io/HEXO/2025/09/07/0402%E8%85%BE%E8%AE%AF%E6%88%90%E9%83%BD/">https://fuqikilroy.github.io/HEXO/2025/09/07/0402%E8%85%BE%E8%AE%AF%E6%88%90%E9%83%BD/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://fuqikilroy.github.io/HEXO" target="_blank">抚七 kilroy</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/HEXO/tags/C/">C++</a><a class="post-meta__tags" href="/HEXO/tags/%E9%9D%A2%E7%BB%8F/">面经</a></div><div class="post-share"><div class="social-share" data-image="https://bu.dusays.com/2025/09/03/68b7fed6299e9.webp" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://bu.dusays.com/2025/09/03/68b82f0c04ba6.webp" target="_blank"><img class="post-qr-code-img" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b82f0c04ba6.webp" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://bu.dusays.com/2025/09/03/68b82f0bdd547.webp" target="_blank"><img class="post-qr-code-img" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b82f0bdd547.webp" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/HEXO/2025/09/07/0306CVTE/" title="【面经】CVTE"><img class="cover" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">【面经】CVTE</div></div><div class="info-2"><div class="info-item-1"> 自我介绍 项目web服务器提问(跟socket相关的事件有哪些？epoll监听了socket哪些事件？用的什么模式水平触发还是边沿触发模式？你用的是阻塞IO还是非阻塞IO，为什么用非阻塞?) C++多态是怎么实现的？答到虚函数表指针就就结束了 构造函数可以是虚函数吗？不可以，为什么？ 析构函数可以是虚函数吗？可以。根据我回答扩展的一个问题：父类析构不是虚函数，他的子类有一个父类指针指向子类的对象，然后我释放这个父类指针的时候会调用子类的虚构函数吗？不会。我觉得应该应该回答继承时的虚构顺序，当时没想起。如果不会调用析构函数，子类会被释放吗？不会。面试官主动放弃该话题。 简单说一下new/...</div></div></div></a><a class="pagination-related" href="/HEXO/2025/09/07/0408%E8%85%BE%E8%AE%AF%E6%B7%B1%E5%9C%B3/" title="【面经】腾讯深圳"><img class="cover" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7f047588d4.webp" onerror="onerror=null;src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">【面经】腾讯深圳</div></div><div class="info-2"><div class="info-item-1">腾讯深圳4月8号  在你看来epoll是个什么样的东西，边沿触发和水平触发的模式 epoll的通知机制 线程和进程的区别 多线程和多进程的选择上以什么作为考量 堆的数据结构（可能应该写一个类，然后封装一些函数） C++内存模型 static会被放在导出符号表里吗 网络层和传输层最大的区别是什么 TCP头部有哪些  </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/HEXO/2025/09/07/0306CVTE/" title="【面经】CVTE"><img class="cover" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-09-12</div><div class="info-item-2">【面经】CVTE</div></div><div class="info-2"><div class="info-item-1"> 自我介绍 项目web服务器提问(跟socket相关的事件有哪些？epoll监听了socket哪些事件？用的什么模式水平触发还是边沿触发模式？你用的是阻塞IO还是非阻塞IO，为什么用非阻塞?) C++多态是怎么实现的？答到虚函数表指针就就结束了 构造函数可以是虚函数吗？不可以，为什么？ 析构函数可以是虚函数吗？可以。根据我回答扩展的一个问题：父类析构不是虚函数，他的子类有一个父类指针指向子类的对象，然后我释放这个父类指针的时候会调用子类的虚构函数吗？不会。我觉得应该应该回答继承时的虚构顺序，当时没想起。如果不会调用析构函数，子类会被释放吗？不会。面试官主动放弃该话题。 简单说一下new/...</div></div></div></a><a class="pagination-related" href="/HEXO/2025/09/07/0408%E8%85%BE%E8%AE%AF%E6%B7%B1%E5%9C%B3/" title="【面经】腾讯深圳"><img class="cover" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7f047588d4.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-09-12</div><div class="info-item-2">【面经】腾讯深圳</div></div><div class="info-2"><div class="info-item-1">腾讯深圳4月8号  在你看来epoll是个什么样的东西，边沿触发和水平触发的模式 epoll的通知机制 线程和进程的区别 多线程和多进程的选择上以什么作为考量 堆的数据结构（可能应该写一个类，然后封装一些函数） C++内存模型 static会被放在导出符号表里吗 网络层和传输层最大的区别是什么 TCP头部有哪些  </div></div></div></a><a class="pagination-related" href="/HEXO/2025/09/07/0418%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/" title="【面经】字节跳动"><img class="cover" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed7c3293.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-09-12</div><div class="info-item-2">【面经】字节跳动</div></div><div class="info-2"><div class="info-item-1">2020.4.18 一面 50min  在C++里面我们什么时候会把析构函数写为虚函数呢 C++中引用和指针有什么样的区别 右值引用，移动语义和完美转发在C++11中起到的作用 简单介绍一下RAII这个机制 简单介绍一下http请求和响应的结构 状态码分为几个类别 301和302这两个状态码有什么样的区别呢 断点续传的功能206 服务器什么时候返回304这个状态码，需要带上一些什么样的特征呢 能简单的介绍一下chunk transfer是一种什么样的传输方式呢 简单介绍一下linux下常用的IO多路复用模型 用epoll实现一个server时浏览器主动关闭了一个连接那么epoll收到的是...</div></div></div></a><a class="pagination-related" href="/HEXO/2025/09/07/0421%E7%BD%91%E6%98%93%E4%BA%92%E5%A8%B1/" title="【面经】网易互娱"><img class="cover" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed6127d6.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-09-12</div><div class="info-item-2">【面经】网易互娱</div></div><div class="info-2"><div class="info-item-1"> 自我介绍 python有过深入了解吗？ 面向过程和面向对象哪一块用的比较多？那你用面向对象做了哪些工作 说一下C++的编译过程，编译过程中宏定义和const的区别是什么？在大型工程中用const好一些还是宏定义好一些？ 内联函数有了解过吗？讲一下。 虚函数 内联函数和虚函数谁的执行效率更快？为什么？那静态函数呢 静态函数和普通函数运行效率有什么差距吗？ 进程和线程？进程内存分布讲一下 堆和栈的区别 堆里面申请内存有哪些方式？new和malloc的区别 在构造函数里面能调用虚函数吗？为什么？如果子类在构造函数中调用了父类的虚函数会发生什么？ 在析构函数里面能不能抛出异常？如果抛出会发生什...</div></div></div></a><a class="pagination-related" href="/HEXO/2025/09/07/003C-%E8%AF%AD%E8%A8%80/" title="C++语言"><img class="cover" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed650242.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-09-12</div><div class="info-item-2">C++语言</div></div><div class="info-2"><div class="info-item-1">逻辑用语千万条，第一首先往里套。  首先，其次，然后，最后。 第一，第二，第三，第四。  书籍  《C++ primer》 第五版 《后台开发》 徐晓鑫 《linux高性能服务器编程》 游双 《redis设计与实现》黄健宏 《muduo库》陈硕  static static的使用可以分为两类，一类是用在普通变量和函数上，另一类是用在类中。  普通变量分为全局变量和局部变量。声明为静态全局变量是在全局区分配内存，并且只在当前文件可见，在文件之外是不可见的。其他文件定义同名变量不会发生冲突。变量的值只在第一次执行时进行初始化。声明为静态局部变量时与全局变量类似，只是作用域为局部作用域。 静态...</div></div></div></a><a class="pagination-related" href="/HEXO/2025/09/07/README/" title="【readme】C++求职"><img class="cover" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed6127d6.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-09-12</div><div class="info-item-2">【readme】C++求职</div></div><div class="info-2"><div class="info-item-1">后端开发  操作系统 计算机网络 C++基础知识 数据库  笔试常考类型  模拟 ★★★★★ 可难可易 大部分题都是模拟中使用某个算法优化 贪心 ★★★ 按照某种规则排序 字符串 ★★★ 输入输出容易搞人 双指针处理字符串空格单词 DFS/BFS ★★★ 有多少种组合数 图的最短时间 滑动窗口/双指针 ★★ 最短或最长的子串 最多可变k次 DP ★★ 看运气 背包问题居多 遍历时维护最值 堆 ★★  学会自定义数据的排序规则 并查集 ★★ 寻找连通分量和最大集合数量 找规律/数学 ★  看运气 前缀和  ★  子数组范围较小时直接用 二分法  ★   灵活运用库函数lower_bound...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2021/03/27/0106da541a922.gif'" alt="avatar"/></div><div class="author-info-name">抚七kilroy</div><div class="author-info-description">早上好，哈~~~又困了……</div><div class="site-data"><a href="/HEXO/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/HEXO/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/HEXO/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fuqikilroy"><i class="fab fa-github"></i><span>Follow Me……</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/fuqikilroy" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/515661944/lists/" target="_blank" title="bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="https://www.douyin.com/user/MS4wLjABAAAAsjEOsMZLnATWzRJu-eyeyRgWTKXidHcSKaZYGxZkb2E?from_tab_name=main" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a class="social-icon" href="https://steamcommunity.com/profiles/76561199423246597" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="mailto:215890173@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://bu.dusays.com/2025/09/03/68b82f0c1e19b.webp" target="_blank" title="qq"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://bu.dusays.com/2025/09/03/68b82f0c2520d.webp" target="_blank" title="weixin"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://blog.csdn.net/kilroy_7" target="_blank" title="CSDN"><i class="fas fa-c"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我唯一知道的就是，我，一无所知。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E6%88%90%E9%83%BD"><span class="toc-number">1.</span> <span class="toc-text">腾讯成都</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/HEXO/2025/09/12/hello-world/" title="Hello World"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed7668b3.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="Hello World"/></a><div class="content"><a class="title" href="/HEXO/2025/09/12/hello-world/" title="Hello World">Hello World</a><time datetime="2025-09-12T08:23:17.570Z" title="发表于 2025-09-12 08:23:17">2025-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/HEXO/2025/09/07/001%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed6343a1.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="操作系统"/></a><div class="content"><a class="title" href="/HEXO/2025/09/07/001%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统">操作系统</a><time datetime="2025-09-07T16:37:18.000Z" title="发表于 2025-09-07 16:37:18">2025-09-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/HEXO/2025/09/07/002%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7f0536352b.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="计算机网络"/></a><div class="content"><a class="title" href="/HEXO/2025/09/07/002%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">计算机网络</a><time datetime="2025-09-07T16:37:18.000Z" title="发表于 2025-09-07 16:37:18">2025-09-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://bu.dusays.com/2025/09/03/68b7eabbf0a54.webp);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By 抚七kilroy</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.3</a></span></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20257003" target="_blank">萌ICP备20257003号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/HEXO/js/utils.js"></script><script src="/HEXO/js/main.js"></script><script src="/HEXO/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'fuqikilroy/HEXO',
+      'data-repo-id': 'R_kgDOPmIhWg',
+      'data-category-id': 'DIC_kwDOPmIhWs4Cuye0',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="8510804307" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3NKRVYxaQRjDfcHj",ck:"3NKRVYxaQRjDfcHj"})</script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="77" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="五尺长剑七尺躯，何为抚琴长太息？  ——抚七kilroy,虚伪的眼泪会伤害别人，虚伪的笑容会伤害自己。——《反叛的鲁路修》,世界残酷而美丽，我们每一个人，自出生的那一刻起，便是自由的。——《进击的巨人》,如果我闭上了双眼，看到的是黑暗的话，那么当我睁开眼睛去看这个世界的时候，是否会是一片光明？——《东京喰种》,人生在世只有一次，不必勉强选择自己不喜欢的路，随性而生或随性而死都没关系。——《火影忍者》,请记得那些对你好的人，因为他本可以不这样。——《千与千寻》,谁都不可能和谁在一起一辈子，人就是这样，必须习惯失去。——《秒速五厘米》,只有在了解了自己的无能以后，才能踏上成为高手的道路。——《灌篮高手》,当你想哭的时候，就奔跑吧。——《蜂蜜与四叶草》,不要停下脚步，道路会不断延伸。——《钢之炼金术师》,相信那个相信着自己的你。——《天元突破》,这就是我的忍道，说到做到。——《火影忍者》,教练，我想打篮球。——《灌篮高手》,你心中的光芒比任何事物都耀眼。——《数码宝贝》,只要活着，就有改变的可能。——《命运石之门》,无论倒下多少次，都要再站起来。——《银魂》,什么都无法舍弃的人，什么也改变不了！ ——《进击的巨人》,我不是天生的王者，但我骨子里流动着不让我低头的血液。——《海贼王》,萝莉控不是病，是人生态度啊！——《日常系的异能战斗》,男人变态有什么错？——《寒蝉鸣泣之时》,我们总是在注意错过太多，却不注意自己拥有多少。——《未闻花名》,只要记住你的名字，不管你在世界的哪个地方，我一定会去见你。——《你的名字》,有思念你的人在的地方，就是你的归处。——《火影忍者》,我想成为一个温柔的人，因为曾被温柔的人那样对待。——《夏目友人帐》,如果明天你能看到一样的东西，能想起同样的事情，那就是奇迹。——《EVA》,我不知道离别的滋味是这样凄凉，我不知道说声再见要这么坚强。——《千与千寻》,世界上也许有人喜欢孤独，但却没有人能承受孤独。——《妖精的尾巴》,无论在哪里遇到你，我都会喜欢上你。——《Angle Beats!》,能哭的地方，只有厕所和爸爸的怀里。——《CLANNAD》" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["meta[name=\"description\"]","link[rel=\"canonical\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/HEXO/404.html') : window.location.href = '/HEXO/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="find something..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/HEXO/js/search/local-search.js"></script></div></div><script src="/HEXO/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/HEXO/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>

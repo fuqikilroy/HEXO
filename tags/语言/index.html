@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>标签: 语言 | 抚七 kilroy</title><meta name="author" content="抚七kilroy"><meta name="copyright" content="抚七kilroy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="这是抚七kilroy的个人博客，记录与分享技术的每一刻、学习笔记及生活随笔。"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://bu.dusays.com/2025/09/03/68b7fc63d6771.ico"><link rel="canonical" href="https://fuqikilroy.github.io/HEXO/tags/%E8%AF%AD%E8%A8%80/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/HEXO/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "t3arhy0fns");
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/HEXO/',
+  algolia: undefined,
+  localSearch: {"path":"/HEXO/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: 抚七kilroy","link":"链接: ","source":"来源: 抚七 kilroy","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '标签: 语言',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'tag'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (true) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2021/03/27/0106da541a922.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/HEXO/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/HEXO/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/HEXO/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/HEXO/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/contact/"><i class="fa-fw fas fa-clipboard-list"></i><span> 公告栏</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/HEXO/aboutme/"><i class="fa-fw fas fa-heartbeat"></i><span> 抚七</span></a></li><li><a class="site-page child" href="/HEXO/zhuifan/"><i class="fa-fw fab fa-bilibili"></i><span> 追番</span></a></li><li><a class="site-page child" href="/HEXO/zhuiju/"><i class="fa-fw fas fa-tv"></i><span> 追剧</span></a></li><li><a class="site-page child" href="/HEXO/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 日志</span></a></li><li><a class="site-page child" href="/HEXO/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/HEXO/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://bu.dusays.com/2025/09/03/68b7f0536352b.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/HEXO/"><span class="site-name">抚七 kilroy</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/HEXO/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/HEXO/contact/"><i class="fa-fw fas fa-clipboard-list"></i><span> 公告栏</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/HEXO/aboutme/"><i class="fa-fw fas fa-heartbeat"></i><span> 抚七</span></a></li><li><a class="site-page child" href="/HEXO/zhuifan/"><i class="fa-fw fab fa-bilibili"></i><span> 追番</span></a></li><li><a class="site-page child" href="/HEXO/zhuiju/"><i class="fa-fw fas fa-tv"></i><span> 追剧</span></a></li><li><a class="site-page child" href="/HEXO/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 日志</span></a></li><li><a class="site-page child" href="/HEXO/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/HEXO/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">语言</h1></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/HEXO/2025/09/07/%20%E3%80%90Web%E3%80%91%E5%9F%BA%E7%A1%80%E5%90%91/" title="Web开发"><img class="post-bg" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed6127d6.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="Web开发"></a></div><div class="recent-post-info"><a class="article-title" href="/HEXO/2025/09/07/%20%E3%80%90Web%E3%80%91%E5%9F%BA%E7%A1%80%E5%90%91/" title="Web开发">Web开发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-07T11:35:23.000Z" title="发表于 2025-09-07 11:35:23">2025-09-07</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-12T08:23:17.560Z" title="更新于 2025-09-12 08:23:17">2025-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/web/">web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/%E8%AF%AD%E8%A8%80/">语言</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/Web%E5%BC%80%E5%8F%91/">Web开发</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/html/">html</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/css/">css</a></span></div><div class="content">概述 本文章为Web面向基础的HTML和CSS3的基础知识大纲，是本人学习后的知识总结，如有遗漏不足，欢迎指正，具体内容请移步相关文档及链接： 思维导图链接： HTML5 CSS上 CSS下 【如果遇到密码，统一为：1230】 下面内容为文章目录，可以先预览后再决定是否下载文档 HTML5 ●简介 ●1.1  网页概述 ●1.2  网页制作技术入门 ●1.3  Dreamweaver工具的使用 ●标签 ●带有“&lt; &gt;”符号的元素被称为HTML标签 ●单标签 ●双标签 ●注释标签 ●页面格式化标签 ●标签的属性 ●HTML文档头部相关标签 ●文本样式标签 ●文本格式化标签 ●图...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/HEXO/2025/09/06/%20%E3%80%90JAVA%E3%80%91%E5%9F%BA%E7%A1%80/" title="【JAVA】基础"><img class="post-bg" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed7668b3.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="【JAVA】基础"></a></div><div class="recent-post-info"><a class="article-title" href="/HEXO/2025/09/06/%20%E3%80%90JAVA%E3%80%91%E5%9F%BA%E7%A1%80/" title="【JAVA】基础">【JAVA】基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-06T23:47:26.000Z" title="发表于 2025-09-06 23:47:26">2025-09-06</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-12T08:23:17.560Z" title="更新于 2025-09-12 08:23:17">2025-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AF%AD%E6%B3%95%E8%AF%AD%E8%A8%80/">语法语言</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AF%AD%E6%B3%95%E8%AF%AD%E8%A8%80/JAVA/">JAVA</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/%E8%AF%AD%E8%A8%80/">语言</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/java/">java</a></span></div><div class="content">前言： 本文章为java的基础知识大纲，是本人学习后的知识总结，如有遗漏不足，欢迎指正，具体内容请移步相关文档及链接： 文档链接: JAVA基础 密码: 1230 【如果遇到密码，统一为：1230】 下面内容为文章目录，可以先预览后再决定是否详细查看文档  一、简介 1.1 Java 程序组成 　1.1.1 对象、类、方法、实例变量 1.2 开发环境配置 1.3 Java 主要特性 　1.3.1 简单性（语法简化与内存管理） 　1.3.2 面向对象（单继承与接口多继承） 　1.3.3 分布式（网络编程与 RMI 机制） 　1.3.4 健壮性（强类型与异常处理） 　1.3.5 安全性（类加...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/HEXO/2025/09/06/%20%E3%80%90Linux%E3%80%91%E5%9F%BA%E7%A1%80/" title="Linux 基础"><img class="post-bg" src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="Linux 基础"></a></div><div class="recent-post-info"><a class="article-title" href="/HEXO/2025/09/06/%20%E3%80%90Linux%E3%80%91%E5%9F%BA%E7%A1%80/" title="Linux 基础">Linux 基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-06T23:47:26.000Z" title="发表于 2025-09-06 23:47:26">2025-09-06</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-12T08:23:17.560Z" title="更新于 2025-09-12 08:23:17">2025-09-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AF%AD%E6%B3%95%E8%AF%AD%E8%A8%80/">语法语言</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AF%AD%E6%B3%95%E8%AF%AD%E8%A8%80/Linux/">Linux</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/%E8%AF%AD%E8%A8%80/">语言</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/Linux/">Linux</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/HEXO/tags/%E7%B3%BB%E7%BB%9F/">系统</a></span></div><div class="content">前言： 本文章为Linux的基础知识大纲，是本人学习后的知识总结，如有遗漏不足，欢迎指正，具体内容请移步相关文档及链接： 文档链接:  Linux  密码: 1230 【如果遇到密码，统一为：1230】 下面内容为文章目录，可以先预览后再决定是否详细查看文档  一、简介 1.1 Linux发行版概述 　1.1.1 主流发行版（Debian、Ubuntu、CentOS） 　1.1.2 服务器与桌面版应用场景  二、系统操作 2.1 系统启动与关闭 　2.1.1 系统启动过程 　　2.1.1.1 内核引导（BIOS自检与内核加载） 　　2.1.1.2 运行 init 进程（/etc/init...</div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2021/03/27/0106da541a922.gif'" alt="avatar"/></div><div class="author-info-name">抚七kilroy</div><div class="author-info-description">早上好，哈~~~又困了……</div><div class="site-data"><a href="/HEXO/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/HEXO/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/HEXO/categories/"><div class="headline">分类</div><div class="length-num">33</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fuqikilroy"><i class="fab fa-github"></i><span>Follow Me……</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/fuqikilroy" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/515661944/lists/" target="_blank" title="bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="https://www.douyin.com/user/MS4wLjABAAAAsjEOsMZLnATWzRJu-eyeyRgWTKXidHcSKaZYGxZkb2E?from_tab_name=main" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a><a class="social-icon" href="https://steamcommunity.com/profiles/76561199423246597" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="mailto:215890173@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://bu.dusays.com/2025/09/03/68b82f0c1e19b.webp" target="_blank" title="qq"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://bu.dusays.com/2025/09/03/68b82f0c2520d.webp" target="_blank" title="weixin"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://blog.csdn.net/kilroy_7" target="_blank" title="CSDN"><i class="fas fa-c"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我唯一知道的就是，我，一无所知。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/HEXO/2025/09/12/hello-world/" title="Hello World"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed7668b3.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="Hello World"/></a><div class="content"><a class="title" href="/HEXO/2025/09/12/hello-world/" title="Hello World">Hello World</a><time datetime="2025-09-12T08:23:17.570Z" title="发表于 2025-09-12 08:23:17">2025-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/HEXO/2025/09/07/001%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7fed6343a1.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="操作系统"/></a><div class="content"><a class="title" href="/HEXO/2025/09/07/001%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统">操作系统</a><time datetime="2025-09-07T16:37:18.000Z" title="发表于 2025-09-07 16:37:18">2025-09-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/HEXO/2025/09/07/002%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络"><img src= "/HEXO/%E6%AD%A3%E5%9C%A8%E5%8A%AA%E5%8A%9B%E5%8A%A0%E8%BD%BD%E2%80%A6%E2%80%A6" data-lazy-src="https://bu.dusays.com/2025/09/03/68b7f0536352b.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2025/09/03/68b7fc63ef297.webp'" alt="计算机网络"/></a><div class="content"><a class="title" href="/HEXO/2025/09/07/002%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">计算机网络</a><time datetime="2025-09-07T16:37:18.000Z" title="发表于 2025-09-07 16:37:18">2025-09-07</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/HEXO/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/HEXO/categories/others/"><span class="card-category-list-name">others</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/HEXO/categories/others/Hello-World/"><span class="card-category-list-name">Hello World</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/HEXO/categories/others/test/"><span class="card-category-list-name">test</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><span class="card-category-list-name">计算机</span><span class="card-category-list-count">26</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%85%AB%E8%82%A1%E6%96%87/"><span class="card-category-list-name">八股文</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%85%AB%E8%82%A1%E6%96%87/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/HEXO/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"><span class="card-category-list-name">前端开发</span><span class="card-category-list-count">2</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/HEXO/tags/%E5%85%AB%E8%82%A1%E6%96%87/" style="font-size: 1.45em; color: rgb(59, 195, 86);">八股文</a><a href="/HEXO/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.15em; color: rgb(57, 135, 50);">操作系统</a><a href="/HEXO/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.15em; color: rgb(72, 86, 50);">计算机网络</a><a href="/HEXO/tags/C/" style="font-size: 1.45em; color: rgb(100, 96, 155);">C++</a><a href="/HEXO/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.15em; color: rgb(54, 200, 50);">数据库</a><a href="/HEXO/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(165, 127, 50);">数据结构</a><a href="/HEXO/tags/C-%E9%A1%B9%E7%9B%AE/" style="font-size: 1.15em; color: rgb(50, 76, 50);">C++项目</a><a href="/HEXO/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 1.38em; color: rgb(95, 50, 50);">面经</a><a href="/HEXO/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 1.3em; color: rgb(147, 174, 169);">语法</a><a href="/HEXO/tags/Android%E5%BC%80%E5%8F%91/" style="font-size: 1.15em; color: rgb(65, 67, 102);">Android开发</a><a href="/HEXO/tags/%E8%AF%AD%E8%A8%80/" style="font-size: 1.3em; color: rgb(50, 50, 114);">语言</a><a href="/HEXO/tags/java/" style="font-size: 1.15em; color: rgb(186, 50, 99);">java</a><a href="/HEXO/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.22em; color: rgb(137, 150, 142);">前端</a><a href="/HEXO/tags/JSON/" style="font-size: 1.15em; color: rgb(95, 105, 51);">JSON</a><a href="/HEXO/tags/Linux/" style="font-size: 1.15em; color: rgb(196, 124, 50);">Linux</a><a href="/HEXO/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 1.15em; color: rgb(83, 79, 55);">系统</a><a href="/HEXO/tags/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.15em; color: rgb(144, 50, 126);">MySql数据库</a><a href="/HEXO/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 1.15em; color: rgb(55, 58, 50);">后端开发</a><a href="/HEXO/tags/C/" style="font-size: 1.15em; color: rgb(183, 60, 149);">C#</a><a href="/HEXO/tags/Unity/" style="font-size: 1.15em; color: rgb(90, 58, 197);">Unity</a><a href="/HEXO/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 1.22em; color: rgb(194, 139, 175);">游戏开发</a><a href="/HEXO/tags/Web%E5%BC%80%E5%8F%91/" style="font-size: 1.15em; color: rgb(75, 129, 187);">Web开发</a><a href="/HEXO/tags/html/" style="font-size: 1.15em; color: rgb(182, 50, 111);">html</a><a href="/HEXO/tags/css/" style="font-size: 1.15em; color: rgb(57, 100, 192);">css</a><a href="/HEXO/tags/python%E5%BA%93/" style="font-size: 1.15em; color: rgb(50, 50, 106);">python库</a><a href="/HEXO/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 1.15em; color: rgb(53, 133, 105);">数据分析</a><a href="/HEXO/tags/notebook/" style="font-size: 1.15em; color: rgb(65, 96, 66);">notebook</a><a href="/HEXO/tags/MATLIB/" style="font-size: 1.15em; color: rgb(63, 195, 50);">MATLIB</a><a href="/HEXO/tags/%E7%90%86%E8%AE%BA%E5%8E%9F%E7%90%86/" style="font-size: 1.15em; color: rgb(197, 132, 91);">理论原理</a><a href="/HEXO/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 1.22em; color: rgb(162, 188, 150);">计算机图形学</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/HEXO/archives/2025/09/">
+            <span class="card-archive-list-date">
+              九月 2025
+            </span>
+            <span class="card-archive-list-count">27</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/HEXO/archives/2025/08/">
+            <span class="card-archive-list-date">
+              八月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">28</div></div><div class="webinfo-item"><div class="item-name">运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2025-08-31T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">58.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-12T08:23:52.148Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://bu.dusays.com/2025/09/03/68b7eabbf0a54.webp);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By 抚七kilroy</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.3</a></span></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20257003" target="_blank">萌ICP备20257003号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/HEXO/js/utils.js"></script><script src="/HEXO/js/main.js"></script><script src="/HEXO/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><div class="aplayer no-destroy" data-id="8510804307" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3NKRVYxaQRjDfcHj",ck:"3NKRVYxaQRjDfcHj"})</script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="77" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="五尺长剑七尺躯，何为抚琴长太息？  ——抚七kilroy,虚伪的眼泪会伤害别人，虚伪的笑容会伤害自己。——《反叛的鲁路修》,世界残酷而美丽，我们每一个人，自出生的那一刻起，便是自由的。——《进击的巨人》,如果我闭上了双眼，看到的是黑暗的话，那么当我睁开眼睛去看这个世界的时候，是否会是一片光明？——《东京喰种》,人生在世只有一次，不必勉强选择自己不喜欢的路，随性而生或随性而死都没关系。——《火影忍者》,请记得那些对你好的人，因为他本可以不这样。——《千与千寻》,谁都不可能和谁在一起一辈子，人就是这样，必须习惯失去。——《秒速五厘米》,只有在了解了自己的无能以后，才能踏上成为高手的道路。——《灌篮高手》,当你想哭的时候，就奔跑吧。——《蜂蜜与四叶草》,不要停下脚步，道路会不断延伸。——《钢之炼金术师》,相信那个相信着自己的你。——《天元突破》,这就是我的忍道，说到做到。——《火影忍者》,教练，我想打篮球。——《灌篮高手》,你心中的光芒比任何事物都耀眼。——《数码宝贝》,只要活着，就有改变的可能。——《命运石之门》,无论倒下多少次，都要再站起来。——《银魂》,什么都无法舍弃的人，什么也改变不了！ ——《进击的巨人》,我不是天生的王者，但我骨子里流动着不让我低头的血液。——《海贼王》,萝莉控不是病，是人生态度啊！——《日常系的异能战斗》,男人变态有什么错？——《寒蝉鸣泣之时》,我们总是在注意错过太多，却不注意自己拥有多少。——《未闻花名》,只要记住你的名字，不管你在世界的哪个地方，我一定会去见你。——《你的名字》,有思念你的人在的地方，就是你的归处。——《火影忍者》,我想成为一个温柔的人，因为曾被温柔的人那样对待。——《夏目友人帐》,如果明天你能看到一样的东西，能想起同样的事情，那就是奇迹。——《EVA》,我不知道离别的滋味是这样凄凉，我不知道说声再见要这么坚强。——《千与千寻》,世界上也许有人喜欢孤独，但却没有人能承受孤独。——《妖精的尾巴》,无论在哪里遇到你，我都会喜欢上你。——《Angle Beats!》,能哭的地方，只有厕所和爸爸的怀里。——《CLANNAD》" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["meta[name=\"description\"]","link[rel=\"canonical\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/HEXO/404.html') : window.location.href = '/HEXO/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="find something..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/HEXO/js/search/local-search.js"></script></div></div><script src="/HEXO/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/HEXO/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
