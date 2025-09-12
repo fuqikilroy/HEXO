@@ -1,8 +1,10 @@
 ---
 title: test
 date: 2025-08-29 15:35:36
-categories: test
 tags: test
+categories: 
+    - others
+    - test
 typora-root-url: test
 typora-copy-images-to: test
 ---
