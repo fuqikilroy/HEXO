@@ -3,12 +3,11 @@ title: 【readme】C++求职
 date: 2025-9-7 16:35:18
 tags: 
     - 八股文
-    - C++
-    - readme
+    - C++项目
 categories: 
     - 计算机
+    - 求职技巧
     - 八股文
-    - C++
 ---
 
 ## 后端开发
