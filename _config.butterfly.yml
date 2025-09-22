@@ -74,7 +74,7 @@ social:
 
 # 网站的 favicon 图标
 # favicon: /img/favicon.ico
-favicon: https://bu.dusays.com/2025/09/03/68b7fc63d6771.ico
+favicon: https://bu.dusays.com/2025/09/23/68d1a0fa13f28.ico
 # 头像设置
 avatar:
   # 头像图片链接
@@ -1310,17 +1310,17 @@ lazyload:
 # ---------------
 pwa:
   # 是否启用 PWA
-  enable: false
+  enable: true
   # PWA manifest 文件路径
-  manifest:
+  manifest: /manifest.josn
   # Apple Touch 图标路径
-  apple_touch_icon:
+  apple_touch_icon: "source/img/icon/apple-touch-icon.png"
   # 32x32 像素的 favicon 图标路径
-  favicon_32_32:
+  favicon_32_32: "source/img/icon/favicon-32x32.png"
   # 16x16 像素的 favicon 图标路径
-  favicon_16_16:
+  favicon_16_16: "source/img/icon/favicon-16x16.png"
   # mask 图标路径
-  mask_icon:
+  mask_icon: "source/img/icon/LOGO-icon.png"
 
 # Open graph meta tags
 # 参见 https://hexo.io/docs/helpers#open-graph
@@ -1382,12 +1382,11 @@ CDN:
 
   option:
 
-
 # envelope_comment
 # see https://akilar.top/posts/e2d3c450/
 envelope_comment:
   enable: true #控制开关
-  custom_pic:      
+  custom_pic:
     cover: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
     line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png #信笺底部图片
     beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
@@ -1422,14 +1421,6 @@ envelope_comment:
     #     enable: true
     #   card_post_series:
     #     enable: true
-
-
-
-
-
-
-
-
 # 51·LA:
 #   icon: https://sdk.51.la/icon/3-1.png
 #   description: 网站数据统计与营销分析平台
@@ -1440,18 +1431,18 @@ envelope_comment:
 #       type: customapi
 #       url: https://fuqikilroy.github.io/HEXO/
 #       method: GET
-#       headers: 
+#       headers:
 #           Cookie: 3NKRVYxaQRjDfcHj
 #       mappings:
-#           - field: 
+#           - field:
 #               bean: curUv
 #             label: 今日UV
-#           - field: 
+#           - field:
 #               bean: curPv
 #             label: 今日PV
-#           - field: 
+#           - field:
 #               bean: monthPv
 #             label: 本月浏览数
-#           - field: 
+#           - field:
 #               bean: totalPv
 #             label: 总访问量

@@ -1,0 +1,31 @@
+{
+  "name":"抚七kilroy的博客",
+  "short_name":"fuqikilroy's Blog",
+  "description":"记录与分享技术的每一刻,同时享受生活的点滴",
+  "icons":[
+  {
+    "src":"assets/images/icons/bird36.png",
+    "sizes":"36x36",
+    "type":"image/png"
+  },
+  {
+    "src":"assets/images/icons/bird96.png",
+    "sizes":"96x96",
+    "type":"image/png"
+  },
+  {
+    "src":"source/img/icon/android-chrome-192x192.png",
+    "sizes":"192x192",
+    "type":"image/png"
+  },
+  {
+    "src":"source/img/icon/android-chrome-512x512.png",
+    "sizes":"512x512",
+    "type":"image/png"
+  }],
+  "background_color":"#fff",
+  "theme_color":"#000",
+  "start_url":"/",
+  "display":"standalone",
+  "orientation":"portrait"
+}
