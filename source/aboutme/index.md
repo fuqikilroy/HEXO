@@ -27,3 +27,15 @@ branch：Ai  ---  AI应用 -》 机器学习 -》 神经网络
 # 技术栈
 
 C++、python、java
+
+
+
+
+
+![葡萄海报](https://bu.dusays.com/2025/09/24/68d34ae9ebb6f.jpg)
+
+
+
+
+
+![海报设计](https://bu.dusays.com/2025/09/24/68d34b198b245.png)
