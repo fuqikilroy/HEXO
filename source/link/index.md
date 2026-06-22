@@ -18,7 +18,5 @@ top_img: https://bu.dusays.com/2025/09/03/68b7eabc23885.webp
 
     name: 抚七kilroy
     link: https://fuqikilroy.github.io/HEXO/
-    avatar: https://bu.dusays.com/2025/09/03/68b7fc642c8da.jpg
+    avatar: https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp
     descr: 记录与分享技术的每一刻,同时享受生活的点滴
-
-
