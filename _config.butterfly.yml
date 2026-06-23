@@ -424,7 +424,7 @@ aside:
     # 是否显示作者信息卡片
     enable: true
     # 作者描述
-    description: 早上好，哈~~~又困了……
+    description: 早上好~~~困啊……
     button:
       # 是否显示按钮
       enable: true
