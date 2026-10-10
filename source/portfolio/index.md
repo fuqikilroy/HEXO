@@ -127,13 +127,15 @@ Unity游戏开发 | 2025.8 - 2025.9
 
 <!-- tab 🎨 美术作品 -->
 
-![葡萄海报](https://bu.dusays.com/2025/09/24/68d34ae9ebb6f.jpg)
+![葡萄海报](../img/works/0.jpg)
 
-![夏日音乐海报](https://bu.dusays.com/2025/09/24/68d34b198b245.png)
+![夏日游玩季海报](../img/works/1.jpg)
 
-![夏日游玩季海报](https://bu.dusays.com/2026/06/12/6a2b4bcbdccf6.jpg)
+![琪小芽个人IP设计](../img/works/2.jpg)
 
-![琪小芽个人IP设计](https://bu.dusays.com/2025/09/24/68d34b198b245.png)
+![夏日音乐海报](../img/works/3.png)
+
+![AEPC海报](../img/works/4.jpg)
 
 <!-- endtab -->
 

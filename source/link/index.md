@@ -3,8 +3,8 @@ title: 友情链接
 date: 2025-08-30 00:00:00
 type: "link"
 random: true
-# top_img: /img/wallpaper/link.webp
-top_img: https://bu.dusays.com/2025/09/03/68b7eabc23885.webp
+top_img: /img/wallpaper/link.webp
+# top_img: https://bu.dusays.com/2025/09/03/68b7eabc23885.webp
 # flink_url: xxxxx     # 远程拉取
 ---
 
@@ -18,5 +18,5 @@ top_img: https://bu.dusays.com/2025/09/03/68b7eabc23885.webp
 
     name: 抚七kilroy
     link: https://fuqikilroy.github.io/HEXO/
-    avatar: https://bu.dusays.com/2025/09/03/68b82f0be7fb7.webp
+    avatar: https://i.stardots.io/fuqikilroy/StarDots-2026061207385871382.jpg
     descr: 记录与分享技术的每一刻,同时不要忘记享受生活的点滴
