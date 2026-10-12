@@ -137,6 +137,8 @@ Unity游戏开发 | 2025.8 - 2025.9
 
 ![AEPC海报](../img/works/4.jpg)
 
+![展位设计图](../img/works/5.jpg)
+
 <!-- endtab -->
 
 {% endtabs %}
