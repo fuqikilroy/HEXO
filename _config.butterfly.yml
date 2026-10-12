@@ -92,11 +92,11 @@ default_top_img: /img/wallpaper/default.jpg
 # default_top_img: https://bu.dusays.com/2025/09/03/68b7eac6ae9fb.jpg
 
 # 主页的横幅图片
-index_img: /img/wallpaper/index_img.webp
+index_img: /img/wallpaper/index.webp
 # index_img: https://bu.dusays.com/2025/09/03/68b7eabbf0a54.webp
 
 # 归档页的横幅图片
-archive_img: /img/wallpaper/archive_top.webp
+archive_img: /img/wallpaper/archive.webp
 # archive_img: https://bu.dusays.com/2025/09/03/68b7f047588d4.webp
 
 # 注意: 是标签页（单个标签），不是标签页面（所有标签）
@@ -120,7 +120,7 @@ category_per_img: /img/wallpaper/categories.webp
 # category_per_img: https://bu.dusays.com/2025/09/03/68b7eabb50723.webp
 
 # 页脚的背景图片
-footer_img: /img/wallpaper/index_img.webp
+footer_img: /img/wallpaper/index.webp
 # footer_img: https://bu.dusays.com/2025/09/03/68b7eabbf0a54.webp
 
 # 网站背景
@@ -288,11 +288,11 @@ reward:
   text:
   QR_code:
     - img: /img/wechatpay.webp
-    # - img: https://bu.dusays.com/2025/09/03/68b82f0c04ba6.webp
+      # - img: https://bu.dusays.com/2025/09/03/68b82f0c04ba6.webp
       link:
       text: 微信
     - img: /img/alipay.webp
-    # - img: https://bu.dusays.com/2025/09/03/68b82f0bdd547.webp
+      # - img: https://bu.dusays.com/2025/09/03/68b82f0bdd547.webp
       link:
       text: 支付宝
 
