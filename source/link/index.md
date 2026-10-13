@@ -5,6 +5,7 @@ type: "link"
 random: true
 top_img: /img/wallpaper/link.webp
 # top_img: https://bu.dusays.com/2025/09/03/68b7eabc23885.webp
+# avatar: https://i.stardots.io/fuqikilroy/StarDots-2026061207385871382.jpg
 # flink_url: xxxxx     # 远程拉取
 ---
 
@@ -18,5 +19,5 @@ top_img: /img/wallpaper/link.webp
 
     name: 抚七kilroy
     link: https://fuqikilroy.github.io/HEXO/
-    avatar: https://i.stardots.io/fuqikilroy/StarDots-2026061207385871382.jpg
+    avatar: https://fuqikilroy.github.io/HEXO/link/avatar.webp
     descr: 记录与分享技术的每一刻,同时不要忘记享受生活的点滴
